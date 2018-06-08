@@ -1,0 +1,20 @@
+.wa-content{
+	display: grid;
+	grid-template-columns: calc(100% - 85px)  85px;
+	grid-template-rows: 60px calc(100% - 60px);
+	grid-template-areas: "section__header section__header"
+						 "section__content section__navbar";
+	height: 100%;
+}
+
+@media #{$screen-smarthphone}{
+	.wa-content{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 60px calc(100% - 120px) 60px;
+		grid-template-areas: "section__header"
+							 "section__content"
+							 "section__navbar";
+		height: 100%;
+	}
+}

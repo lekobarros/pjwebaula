@@ -1,0 +1,25 @@
+/*!
+	Theme Name: Proeject: WebAula
+	Theme URI: ...
+	Author: Alex Vasconcelos
+	Author URI: https://github.com/lekobarros
+	Description: 
+	Version: 1.0.0
+	License: 
+*/
+
+// ! Base CSS
+@import "base/_reset";
+@import "base/_colors";
+@import "base/_settings";
+@import "base/_grid";
+@import "base/_typography";
+
+// ! Components
+@import "components/_header";
+@import "components/_slideContainer";
+@import "components/_slidePanelControl";
+@import "components/_slideMap";
+
+// Main
+@import "main";

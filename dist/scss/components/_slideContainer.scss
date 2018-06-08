@@ -1,0 +1,51 @@
+.wa-slides{
+	grid-area: section__content;
+	overflow: hidden;
+
+	.slide{
+		display: flex;
+		position: relative;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		
+		&.slide--blend{
+			background-blend-mode: multiply;
+			background-color: #c2cd23;
+		}
+		
+		.content{
+			padding: 2em;
+			background-color: rgba($color-white, .95);
+			border: 5px solid $color-key-lime-pie;
+			
+			h2{
+				color: $color-key-lime-pie;
+			}
+		}
+	}
+}
+
+
+// Responsive > 880px
+@media screen and (min-width: 55em) {
+	.wa-slides .slide{
+		.content{
+			max-width: 85%;
+		}
+	}
+}
+
+// Responsive < 880px
+@media screen and (max-width: 55em) {
+	.wa-slides .slide{
+		.content{
+			max-height: 85%;
+			margin: 3em;
+			overflow: scroll;
+		}
+	}
+}

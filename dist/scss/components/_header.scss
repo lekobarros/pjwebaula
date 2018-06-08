@@ -1,0 +1,120 @@
+/* Header do wa-content */
+.wa-header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	grid-area: section__header;
+	background: white;
+	
+	// Header Branding
+	.wa-header__brand{
+		flex: 1;
+		display: flex;
+		align-items: center;
+		
+		.item{
+			display: block;
+			width: 129px;
+			height: 37px;
+			background: url('../img/brand.png') no-repeat center center;
+		}
+	}
+	
+	// Header Info Slide 
+	.wa-header__slide{
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		
+		/* The Title */
+		.slide__title{
+			flex: 1;
+			
+			h1{
+				margin: 0;
+				padding: 0;
+				color: $color-oslo-gray;
+				font-family: 'Borda 8';
+				font-size: 21px;
+				text-align: center;
+				text-transform: uppercase;
+			}
+		}
+		
+		/* Progressbar */
+		.slide__progressbar{
+			width: 100%;
+			height: 5px;
+			max-height: 5px;
+			padding: 0 25px;
+			margin: .5em 0 .8em;
+			flex: 1;
+			box-shadow: 0 0 2px rgba(#000, .75);
+			
+			.progressbar__container{
+				width: 100%;
+				height: 100%;
+				background-color: $color-link-water;
+				overflow: hidden;
+			}
+			
+			.progressbar__progress{
+				width: 0%;
+				height: 100%;
+				background-color: $color-cornflower;
+				transition: width .3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+			}
+		}
+	}
+	
+	// Header Navigation
+	.wa-navigation{
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		
+		.navigation__item{
+			display: flex;
+			align-items: center;
+			width: 42px;
+			height: 42px;
+			margin-left: .5em;
+			color: #fff;
+			background-color: $color-key-lime-pie;
+			border-radius: 500px;
+			transition: .3s background-color linear;
+			
+			&:hover{
+				background-color: darken($color-key-lime-pie, 5%);
+			}
+		}
+	}
+}
+
+// Responsive > 880px
+@media screen and (min-width: 55em) {
+	.wa-header{
+		padding: .5em 1.5em;
+	}
+	// wa-navigation
+	.wa-navigation > .navigation__item.navigation__item--question{
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 1em;
+		bottom: 1em;
+	}
+}
+
+// Responsive < 880px
+@media screen and (max-width: 55em) {
+	.wa-header{
+		padding: .5em;
+	}
+	// Hidden .wa-header__slide in flexbox
+	.wa-header__slide{
+		flex: 0;
+		display: none !important;
+	}
+}
